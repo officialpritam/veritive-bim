@@ -56,6 +56,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   $$('a', nav).forEach(a => a.addEventListener('click', closeNav));
 
+  /* ---------- Services dropdown ---------- */
+  $$('.has-dropdown').forEach(item => {
+    const btn = $('.dropdown-toggle', item);
+    const setOpen = (open) => {
+      item.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+    };
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(!item.classList.contains('open'));
+    });
+    document.addEventListener('click', (e) => { if (!item.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && item.classList.contains('open')) { setOpen(false); btn.focus(); }
+    });
+    // Drop focus after picking a link so :focus-within doesn't keep the desktop menu open
+    $$('.dropdown a', item).forEach(a => a.addEventListener('click', () => { setOpen(false); a.blur(); }));
+  });
+
   /* ---------- Typed.js (hero) ---------- */
   if ($('#typed')) new Typed('#typed', {
     strings: ['smarter, sustainable built environment.', 'clash-free coordination.', 'faster project delivery.'],
@@ -76,20 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => AOS.refresh());
 
   function initSliders() {
-  /* ---------- Swiper: markets (continuous marquee) ---------- */
-  const marketsWrap = $('.markets-swiper .swiper-wrapper');
-  // Duplicate slides so loop mode has enough slides on wide screens
-  [...marketsWrap.children].forEach(slide => marketsWrap.appendChild(slide.cloneNode(true)));
-  new Swiper('.markets-swiper', {
-    loop: true,
-    speed: 4000,
-    allowTouchMove: false,
-    autoplay: { delay: 0, disableOnInteraction: false },
-    slidesPerView: 3,
-    spaceBetween: 20,
-    breakpoints: { 576: { slidesPerView: 4 }, 768: { slidesPerView: 5 }, 1024: { slidesPerView: 7 } },
-  });
-
   /* ---------- Swiper: services ---------- */
   new Swiper('.services-swiper', {
     slidesPerView: 1.1,
@@ -335,6 +340,22 @@ document.addEventListener('DOMContentLoaded', () => {
     item.classList.toggle('open', open);
     q.setAttribute('aria-expanded', String(open));
   }));
+
+  /* ---------- Legal pages: highlight current section in the contents list ---------- */
+  const tocLinks = $$('.legal-toc a');
+  if (tocLinks.length) {
+    const tocSections = tocLinks.map(a => $(a.getAttribute('href')));
+    const onTocScroll = () => {
+      // Current = last section whose top has passed 30% of the viewport (first one by default)
+      let current = 0;
+      tocSections.forEach((sec, i) => { if (sec && sec.getBoundingClientRect().top <= window.innerHeight * 0.3) current = i; });
+      // At the very bottom, short final sections can't reach that line, so mark the last one
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) current = tocSections.length - 1;
+      tocLinks.forEach((a, i) => a.classList.toggle('active', i === current));
+    };
+    window.addEventListener('scroll', onTocScroll, { passive: true });
+    onTocScroll();
+  }
 
   /* ---------- Newsletter ---------- */
   const newsletter = $('#newsletterForm');

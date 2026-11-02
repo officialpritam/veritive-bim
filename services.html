@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our BIM Services | VERTIVE BIM Engineering Services</title>
-  <meta name="description" content="Architectural, Structural and MEP BIM, clash detection, shop drawings, 4D sequencing, 5D cost estimation and BIM documentation by VERTIVE BIM Engineering Services.">
+  <meta name="description" content="Structural, Architectural and MEPF BIM, clash co-ordination, sheet preparation, BIM documentation, 3D modelling and 2D drawings using AutoCAD, Revit, Navisworks, ACC and BIM 360.">
   <link rel="icon" type="image/png" href="assets/images/logo.png">
 
   <!-- Fonts -->
@@ -35,7 +35,37 @@
         <ul>
           <li><a href="./">Home</a></li>
           <li><a href="about">About</a></li>
-          <li><a href="services" class="active">Services</a></li>
+          <li class="has-dropdown">
+            <a href="services" class="active">Services</a>
+            <button class="dropdown-toggle" type="button" aria-label="Show services menu" aria-expanded="false" aria-controls="servicesMenu"><i class="ri-arrow-down-s-line"></i></button>
+            <div class="dropdown" id="servicesMenu">
+              <div class="dropdown-col">
+                <span class="dropdown-title">Core BIM</span>
+                <a href="services#structural-bim"><i class="ri-community-line"></i>Structural BIM</a>
+                <a href="services#architectural-bim"><i class="ri-building-2-line"></i>Architectural BIM</a>
+                <span class="dropdown-title">Tools</span>
+                <a href="services#software"><i class="ri-computer-line"></i>Software</a>
+                <a href="services#platforms"><i class="ri-cloud-line"></i>Platforms</a>
+              </div>
+              <div class="dropdown-col">
+                <span class="dropdown-title">MEPF BIM</span>
+                <a href="services#hvac-bim"><i class="ri-temp-cold-line"></i>HVAC BIM</a>
+                <a href="services#electrical-bim"><i class="ri-flashlight-line"></i>Electrical BIM</a>
+                <a href="services#elv-bim"><i class="ri-router-line"></i>ELV BIM</a>
+                <a href="services#plumbing-bim"><i class="ri-drop-line"></i>Plumbing BIM</a>
+                <a href="services#fire-fighting-bim"><i class="ri-fire-line"></i>Fire Fighting BIM</a>
+              </div>
+              <div class="dropdown-col">
+                <span class="dropdown-title">Coordination &amp; Deliverables</span>
+                <a href="services#clash-coordination"><i class="ri-git-merge-line"></i>Clash Co-ordination</a>
+                <a href="services#sheet-preparation"><i class="ri-file-paper-2-line"></i>Sheet Preparation</a>
+                <a href="services#bim-documentation"><i class="ri-file-text-line"></i>BIM Documentation</a>
+                <a href="services#modelling-3d"><i class="ri-box-3-line"></i>3D Modelling</a>
+                <a href="services#drawings-2d"><i class="ri-draft-line"></i>2D Drawings</a>
+                <a href="services" class="dropdown-all">View all services <i class="ri-arrow-right-line"></i></a>
+              </div>
+            </div>
+          </li>
           <li><a href="./#projects">Projects</a></li>
           <li><a href="careers">Careers</a></li>
           <li><a href="contact">Contact</a></li>
@@ -75,12 +105,12 @@
     </div>
   </section>
 
-  <!-- ================= SERVICES GRID ================= -->
+  <!-- ================= SERVICES TABLE ================= -->
   <section class="svc section" id="services">
     <div class="container">
       <div class="section-head split">
         <div data-aos="fade-up">
-          <span class="eyebrow">Our Services</span>
+          <span class="eyebrow">Services We Offer</span>
           <h2 class="section-title">Comprehensive BIM Solutions<br>for <span class="text-accent">Every Project Stage</span></h2>
         </div>
         <div class="section-head-side wide" data-aos="fade-up" data-aos-delay="100">
@@ -88,93 +118,148 @@
         </div>
       </div>
 
-      <div class="svc-grid">
-        <article class="svc-card" data-aos="fade-up">
-          <div class="svc-img"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80&auto=format&fit=crop" alt="Architectural BIM" loading="lazy"></div>
-          <div class="svc-body">
-            <span class="svc-icon"><i class="ri-building-2-line"></i></span>
-            <h3>Architectural BIM</h3>
-            <p>Detailed and coordinated architectural BIM models for better design, visualization and project execution.</p>
-            <a href="#contact" class="svc-link" data-service="Architectural BIM">View Details <i class="ri-arrow-right-line"></i></a>
-          </div>
-        </article>
-        <article class="svc-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="svc-img"><img src="https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?w=800&q=80&auto=format&fit=crop" alt="Structural BIM" loading="lazy"></div>
-          <div class="svc-body">
-            <span class="svc-icon"><i class="ri-community-line"></i></span>
-            <h3>Structural BIM</h3>
-            <p>Accurate structural modelling and detailing to support safe, efficient and buildable structures.</p>
-            <a href="#contact" class="svc-link" data-service="Structural BIM">View Details <i class="ri-arrow-right-line"></i></a>
-          </div>
-        </article>
-        <article class="svc-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="svc-img"><img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=800&q=80&auto=format&fit=crop" alt="MEP Coordination" loading="lazy"></div>
-          <div class="svc-body">
-            <span class="svc-icon"><i class="ri-settings-3-line"></i></span>
-            <h3>MEP Coordination</h3>
-            <p>Integrated modelling and coordination for mechanical, electrical and plumbing systems, ensuring clash-free construction.</p>
-            <a href="#contact" class="svc-link" data-service="MEP Coordination">View Details <i class="ri-arrow-right-line"></i></a>
-          </div>
-        </article>
+      <div class="data-table-wrap" data-aos="fade-up">
+        <table class="data-table svc-table">
+          <caption class="sr-only">Services we offer</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="col-no">Sl. No.</th>
+              <th scope="col">Service</th>
+              <th scope="col">Category</th>
+              <th scope="col">Scope of Work</th>
+              <th scope="col" class="col-action"><span class="sr-only">Enquire</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="structural-bim">
+              <td class="col-no" data-label="Sl. No.">01</td>
+              <th scope="row" data-label="Service"><span class="svc-name"><i class="ri-community-line"></i>Structural BIM</span></th>
+              <td data-label="Category"><span class="tag">Core BIM</span></td>
+              <td data-label="Scope of Work">Accurate structural modelling and detailing of foundations, columns, beams, slabs and steel for safe, buildable structures.</td>
+              <td class="col-action"><a href="#contact" class="svc-link" data-service="Structural BIM">Enquire <i class="ri-arrow-right-line"></i></a></td>
+            </tr>
+            <tr id="architectural-bim">
+              <td class="col-no" data-label="Sl. No.">02</td>
+              <th scope="row" data-label="Service"><span class="svc-name"><i class="ri-building-2-line"></i>Architectural BIM</span></th>
+              <td data-label="Category"><span class="tag">Core BIM</span></td>
+              <td data-label="Scope of Work">Detailed architectural models covering walls, doors, windows, finishes and interiors for better design and visualization.</td>
+              <td class="col-action"><a href="#contact" class="svc-link" data-service="Architectural BIM">Enquire <i class="ri-arrow-right-line"></i></a></td>
+            </tr>
+            <tr id="hvac-bim" class="mepf-row mepf-first">
+              <td class="col-no" data-label="Sl. No.">03</td>
+              <th scope="row" data-label="Service"><span class="svc-name"><i class="ri-temp-cold-line"></i>HVAC BIM</span></th>
+              <td data-label="Category" rowspan="5" class="mepf-group" id="mepf-bim"><span class="mepf-label"><i class="ri-settings-3-line"></i>MEPF BIM</span></td>
+              <td data-label="Scope of Work">Ductwork, chillers, AHUs, diffusers and HVAC piping modelled and coordinated with all trades.</td>
+              <td class="col-action"><a href="#contact" class="svc-link" data-service="MEPF BIM">Enquire <i class="ri-arrow-right-line"></i></a></td>
+            </tr>
+            <tr id="electrical-bim" class="mepf-row">
+              <td class="col-no" data-label="Sl. No.">04</td>
+              <th scope="row" data-label="Service"><span class="svc-name"><i class="ri-flashlight-line"></i>Electrical BIM</span></th>
+              <td data-label="Category" class="mepf-mobile"><span class="tag">MEPF BIM</span></td>
+              <td data-label="Scope of Work">Cable trays, conduits, panels, lighting and power layouts with load-ready model data.</td>
+              <td class="col-action"><a href="#contact" class="svc-link" data-service="MEPF BIM">Enquire <i class="ri-arrow-right-line"></i></a></td>
+            </tr>
+            <tr id="elv-bim" class="mepf-row">
+              <td class="col-no" data-label="Sl. No.">05</td>
+              <th scope="row" data-label="Service"><span class="svc-name"><i class="ri-router-line"></i>ELV BIM</span></th>
+              <td data-label="Category" class="mepf-mobile"><span class="tag">MEPF BIM</span></td>
+              <td data-label="Scope of Work">Extra-low-voltage systems: CCTV, access control, data networks, fire alarm and public address.</td>
+              <td class="col-action"><a href="#contact" class="svc-link" data-service="MEPF BIM">Enquire <i class="ri-arrow-right-line"></i></a></td>
+            </tr>
+            <tr id="plumbing-bim" class="mepf-row">
+              <td class="col-no" data-label="Sl. No.">06</td>
+              <th scope="row" data-label="Service"><span class="svc-name"><i class="ri-drop-line"></i>Plumbing BIM</span></th>
+              <td data-label="Category" class="mepf-mobile"><span class="tag">MEPF BIM</span></td>
+              <td data-label="Scope of Work">Water supply, drainage, sanitary and storm-water networks with correct slopes and fixtures.</td>
+              <td class="col-action"><a href="#contact" class="svc-link" data-service="MEPF BIM">Enquire <i class="ri-arrow-right-line"></i></a></td>
+            </tr>
+            <tr id="fire-fighting-bim" class="mepf-row mepf-last">
+              <td class="col-no" data-label="Sl. No.">07</td>
+              <th scope="row" data-label="Service"><span class="svc-name"><i class="ri-fire-line"></i>Fire Fighting BIM</span></th>
+              <td data-label="Category" class="mepf-mobile"><span class="tag">MEPF BIM</span></td>
+              <td data-label="Scope of Work">Sprinkler, hydrant and fire-suppression systems modelled to code with pump-room layouts.</td>
+              <td class="col-action"><a href="#contact" class="svc-link" data-service="MEPF BIM">Enquire <i class="ri-arrow-right-line"></i></a></td>
+            </tr>
+            <tr id="clash-coordination">
+              <td class="col-no" data-label="Sl. No.">08</td>
+              <th scope="row" data-label="Service"><span class="svc-name"><i class="ri-git-merge-line"></i>Clash Co-ordination</span></th>
+              <td data-label="Category"><span class="tag">Coordination</span></td>
+              <td data-label="Scope of Work">Multi-discipline clash detection and resolution reports to eliminate conflicts before construction.</td>
+              <td class="col-action"><a href="#contact" class="svc-link" data-service="Clash Co-ordination">Enquire <i class="ri-arrow-right-line"></i></a></td>
+            </tr>
+            <tr id="sheet-preparation">
+              <td class="col-no" data-label="Sl. No.">09</td>
+              <th scope="row" data-label="Service"><span class="svc-name"><i class="ri-file-paper-2-line"></i>Sheet Preparation</span></th>
+              <td data-label="Category"><span class="tag">Deliverables</span></td>
+              <td data-label="Scope of Work">Coordinated plans, sections, elevations and shop-drawing sheets set up to project title-block standards.</td>
+              <td class="col-action"><a href="#contact" class="svc-link" data-service="Sheet Preparation">Enquire <i class="ri-arrow-right-line"></i></a></td>
+            </tr>
+            <tr id="bim-documentation">
+              <td class="col-no" data-label="Sl. No.">10</td>
+              <th scope="row" data-label="Service"><span class="svc-name"><i class="ri-file-text-line"></i>BIM Documentation</span></th>
+              <td data-label="Category"><span class="tag">Deliverables</span></td>
+              <td data-label="Scope of Work">Schedules, quantity take-offs, as-built records and handover documentation for the full project lifecycle.</td>
+              <td class="col-action"><a href="#contact" class="svc-link" data-service="BIM Documentation">Enquire <i class="ri-arrow-right-line"></i></a></td>
+            </tr>
+            <tr id="modelling-3d">
+              <td class="col-no" data-label="Sl. No.">11</td>
+              <th scope="row" data-label="Service"><span class="svc-name"><i class="ri-box-3-line"></i>3D Modelling</span></th>
+              <td data-label="Category"><span class="tag">Deliverables</span></td>
+              <td data-label="Scope of Work">Data-rich 3D models at the required LOD for design review, analysis and construction.</td>
+              <td class="col-action"><a href="#contact" class="svc-link" data-service="3D Modelling">Enquire <i class="ri-arrow-right-line"></i></a></td>
+            </tr>
+            <tr id="drawings-2d">
+              <td class="col-no" data-label="Sl. No.">12</td>
+              <th scope="row" data-label="Service"><span class="svc-name"><i class="ri-draft-line"></i>2D Drawings</span></th>
+              <td data-label="Category"><span class="tag">Deliverables</span></td>
+              <td data-label="Scope of Work">Precise 2D CAD drafting, CAD-to-BIM conversion and construction drawings.</td>
+              <td class="col-action"><a href="#contact" class="svc-link" data-service="2D Drawings">Enquire <i class="ri-arrow-right-line"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-        <article class="svc-card" data-aos="fade-up">
-          <div class="svc-img"><img src="https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=800&q=80&auto=format&fit=crop" alt="BIM Modelling" loading="lazy"></div>
-          <div class="svc-body">
-            <span class="svc-icon"><i class="ri-shape-line"></i></span>
-            <h3>BIM Modelling</h3>
-            <p>High-quality 3D models with rich data for accurate design, analysis and construction.</p>
-            <a href="#contact" class="svc-link" data-service="BIM Modelling">View Details <i class="ri-arrow-right-line"></i></a>
-          </div>
-        </article>
-        <article class="svc-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="svc-img">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format&fit=crop" alt="Clash Detection" loading="lazy">
-            <span class="svc-alert" aria-hidden="true">!</span>
-          </div>
-          <div class="svc-body">
-            <span class="svc-icon"><i class="ri-box-3-line"></i></span>
-            <h3>Clash Detection</h3>
-            <p>Identify and resolve design conflicts early to save time, reduce cost and ensure smooth execution.</p>
-            <a href="#contact" class="svc-link" data-service="Clash Detection">View Details <i class="ri-arrow-right-line"></i></a>
-          </div>
-        </article>
-        <article class="svc-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="svc-img"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80&auto=format&fit=crop" alt="Shop Drawings and Detailing" loading="lazy"></div>
-          <div class="svc-body">
-            <span class="svc-icon"><i class="ri-file-list-3-line"></i></span>
-            <h3>Shop Drawings &amp; Detailing</h3>
-            <p>Precise and detailed shop drawings for fabrication and on-site construction support.</p>
-            <a href="#contact" class="svc-link" data-service="Shop Drawings">View Details <i class="ri-arrow-right-line"></i></a>
-          </div>
-        </article>
+  <!-- ================= SOFTWARE & PLATFORMS ================= -->
+  <section class="svc-tools section" id="software">
+    <div class="container">
+      <div class="section-head split">
+        <div data-aos="fade-up">
+          <span class="eyebrow">Tools We Use</span>
+          <h2 class="section-title">Industry-Standard <span class="text-accent">Software &amp; Platforms</span></h2>
+        </div>
+        <div class="section-head-side wide" data-aos="fade-up" data-aos-delay="100">
+          <p>We work in the tools our clients already use, so models and drawings drop straight into your workflow.</p>
+        </div>
+      </div>
 
-        <article class="svc-card" data-aos="fade-up">
-          <div class="svc-img"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80&auto=format&fit=crop" alt="4D Construction Sequencing" loading="lazy"></div>
-          <div class="svc-body">
-            <span class="svc-icon"><i class="ri-calendar-schedule-line"></i></span>
-            <h3>4D Construction Sequencing</h3>
-            <p>Time-based simulation to visualize construction sequence and improve schedule planning.</p>
-            <a href="#contact" class="svc-link" data-service="4D &amp; 5D BIM">View Details <i class="ri-arrow-right-line"></i></a>
-          </div>
-        </article>
-        <article class="svc-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="svc-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format&fit=crop" alt="5D Cost Estimation" loading="lazy"></div>
-          <div class="svc-body">
-            <span class="svc-icon"><i class="ri-database-2-line"></i></span>
-            <h3>5D Cost Estimation</h3>
-            <p>Accurate quantity takeoffs and cost estimation to support better budgeting and decision making.</p>
-            <a href="#contact" class="svc-link" data-service="4D &amp; 5D BIM">View Details <i class="ri-arrow-right-line"></i></a>
-          </div>
-        </article>
-        <article class="svc-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="svc-img"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80&auto=format&fit=crop" alt="BIM Documentation" loading="lazy"></div>
-          <div class="svc-body">
-            <span class="svc-icon"><i class="ri-file-text-line"></i></span>
-            <h3>BIM Documentation</h3>
-            <p>Comprehensive drawings, schedules and documentation to support project lifecycle and facility management.</p>
-            <a href="#contact" class="svc-link" data-service="BIM Documentation">View Details <i class="ri-arrow-right-line"></i></a>
-          </div>
-        </article>
+      <div class="tools-grid">
+        <div class="data-table-wrap" data-aos="fade-up">
+          <table class="data-table">
+            <caption class="tools-caption"><i class="ri-computer-line"></i>Software We Use</caption>
+            <thead>
+              <tr><th scope="col" class="col-no">Sl. No.</th><th scope="col">Software</th><th scope="col">Used For</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="col-no" data-label="Sl. No.">01</td><th scope="row" data-label="Software">AutoCAD</th><td data-label="Used For">2D drafting, detailing and CAD drawings</td></tr>
+              <tr><td class="col-no" data-label="Sl. No.">02</td><th scope="row" data-label="Software">Revit</th><td data-label="Used For">3D BIM modelling, families and sheet production</td></tr>
+              <tr><td class="col-no" data-label="Sl. No.">03</td><th scope="row" data-label="Software">Navisworks</th><td data-label="Used For">Clash detection, model review and coordination</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="data-table-wrap" id="platforms" data-aos="fade-up" data-aos-delay="100">
+          <table class="data-table">
+            <caption class="tools-caption"><i class="ri-cloud-line"></i>Platforms We Use</caption>
+            <thead>
+              <tr><th scope="col" class="col-no">Sl. No.</th><th scope="col">Platform</th><th scope="col">Used For</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="col-no" data-label="Sl. No.">01</td><th scope="row" data-label="Platform">ACC <small>(Autodesk Construction Cloud)</small></th><td data-label="Used For">Cloud collaboration, model sharing and issue tracking</td></tr>
+              <tr><td class="col-no" data-label="Sl. No.">02</td><th scope="row" data-label="Platform">BIM 360</th><td data-label="Used For">Document management and design collaboration</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
@@ -262,10 +347,10 @@
       <div>
         <h5>Our Services</h5>
         <ul class="footer-cols">
-          <li><a href="#services">Architectural BIM</a></li><li><a href="#services">Structural BIM</a></li>
-          <li><a href="#services">MEP Coordination</a></li><li><a href="#services">BIM Modelling</a></li>
-          <li><a href="#services">Clash Detection</a></li><li><a href="#services">Shop Drawings</a></li>
-          <li><a href="#services">4D &amp; 5D BIM</a></li><li><a href="#services">BIM Documentation</a></li>
+          <li><a href="#structural-bim">Structural BIM</a></li><li><a href="#architectural-bim">Architectural BIM</a></li>
+          <li><a href="#mepf-bim">MEPF BIM</a></li><li><a href="#clash-coordination">Clash Co-ordination</a></li>
+          <li><a href="#sheet-preparation">Sheet Preparation</a></li><li><a href="#bim-documentation">BIM Documentation</a></li>
+          <li><a href="#modelling-3d">3D Modelling</a></li><li><a href="#drawings-2d">2D Drawings</a></li>
         </ul>
       </div>
       <div>
@@ -279,7 +364,7 @@
     </div>
     <div class="container footer-bottom">
       <p>&copy; <span id="year">2026</span> VERTIVE BIM ENGINEERING SERVICES. All Rights Reserved.</p>
-      <div><a href="#">Privacy Policy</a><span>|</span><a href="#">Terms &amp; Conditions</a></div>
+      <div><a href="privacy-policy">Privacy Policy</a><span>|</span><a href="terms-and-conditions">Terms &amp; Conditions</a></div>
     </div>
   </footer>
 
@@ -301,9 +386,9 @@
           <div class="field">
             <select name="service" id="cf-service" required>
               <option value="" selected disabled hidden></option>
-              <option>Architectural BIM</option><option>Structural BIM</option><option>MEP Coordination</option>
-              <option>BIM Modelling</option><option>Clash Detection</option><option>Shop Drawings</option>
-              <option>4D &amp; 5D BIM</option><option>BIM Documentation</option>
+              <option>Structural BIM</option><option>Architectural BIM</option><option>MEPF BIM</option>
+              <option>Clash Co-ordination</option><option>Sheet Preparation</option><option>BIM Documentation</option>
+              <option>3D Modelling</option><option>2D Drawings</option>
             </select>
             <label for="cf-service">Service *</label>
           </div>
