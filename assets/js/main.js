@@ -59,20 +59,40 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Services dropdown ---------- */
   $$('.has-dropdown').forEach(item => {
     const btn = $('.dropdown-toggle', item);
+    const subs = $$('.has-submenu', item);
+    const setSubOpen = (sub, open) => {
+      sub.classList.toggle('open', open);
+      $('.submenu-toggle', sub).setAttribute('aria-expanded', open);
+    };
     const setOpen = (open) => {
       item.classList.toggle('open', open);
       btn.setAttribute('aria-expanded', open);
+      if (!open) subs.forEach(sub => setSubOpen(sub, false));
     };
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
+      item.classList.remove('dismissed');
       setOpen(!item.classList.contains('open'));
     });
+    subs.forEach(sub => $('.submenu-toggle', sub).addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = !sub.classList.contains('open');
+      subs.forEach(other => setSubOpen(other, false));
+      setSubOpen(sub, open);
+    }));
     document.addEventListener('click', (e) => { if (!item.contains(e.target)) setOpen(false); });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && item.classList.contains('open')) { setOpen(false); btn.focus(); }
     });
-    // Drop focus after picking a link so :focus-within doesn't keep the desktop menu open
-    $$('.dropdown a', item).forEach(a => a.addEventListener('click', () => { setOpen(false); a.blur(); }));
+    item.addEventListener('focusout', (e) => {
+      if (e.relatedTarget && !item.contains(e.relatedTarget)) setOpen(false);
+    });
+    // Hide the menu after picking a link, even though the pointer is still over it
+    $$('.dropdown a', item).forEach(a => a.addEventListener('click', () => {
+      setOpen(false);
+      item.classList.add('dismissed');
+    }));
+    item.addEventListener('mouseleave', () => item.classList.remove('dismissed'));
   });
 
   /* ---------- Typed.js (hero) ---------- */

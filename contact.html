@@ -38,33 +38,34 @@
           <li class="has-dropdown">
             <a href="services">Services</a>
             <button class="dropdown-toggle" type="button" aria-label="Show services menu" aria-expanded="false" aria-controls="servicesMenu"><i class="ri-arrow-down-s-line"></i></button>
-            <div class="dropdown" id="servicesMenu">
-              <div class="dropdown-col">
-                <span class="dropdown-title">Core BIM</span>
-                <a href="services#structural-bim"><i class="ri-community-line"></i>Structural BIM</a>
-                <a href="services#architectural-bim"><i class="ri-building-2-line"></i>Architectural BIM</a>
-                <span class="dropdown-title">Tools</span>
-                <a href="services#software"><i class="ri-computer-line"></i>Software</a>
-                <a href="services#platforms"><i class="ri-cloud-line"></i>Platforms</a>
-              </div>
-              <div class="dropdown-col">
-                <span class="dropdown-title">MEPF BIM</span>
-                <a href="services#hvac-bim"><i class="ri-temp-cold-line"></i>HVAC BIM</a>
-                <a href="services#electrical-bim"><i class="ri-flashlight-line"></i>Electrical BIM</a>
-                <a href="services#elv-bim"><i class="ri-router-line"></i>ELV BIM</a>
-                <a href="services#plumbing-bim"><i class="ri-drop-line"></i>Plumbing BIM</a>
-                <a href="services#fire-fighting-bim"><i class="ri-fire-line"></i>Fire Fighting BIM</a>
-              </div>
-              <div class="dropdown-col">
-                <span class="dropdown-title">Coordination &amp; Deliverables</span>
-                <a href="services#clash-coordination"><i class="ri-git-merge-line"></i>Clash Co-ordination</a>
-                <a href="services#sheet-preparation"><i class="ri-file-paper-2-line"></i>Sheet Preparation</a>
-                <a href="services#bim-documentation"><i class="ri-file-text-line"></i>BIM Documentation</a>
-                <a href="services#modelling-3d"><i class="ri-box-3-line"></i>3D Modelling</a>
-                <a href="services#drawings-2d"><i class="ri-draft-line"></i>2D Drawings</a>
-                <a href="services" class="dropdown-all">View all services <i class="ri-arrow-right-line"></i></a>
-              </div>
-            </div>
+            <ul class="dropdown" id="servicesMenu">
+              <li><a href="services#drafting-2d">2D Drafting</a></li>
+              <li><a href="services#architectural-3d-model">Architectural 3D Model</a></li>
+              <li><a href="services#structural-3d-model">Structural 3D Model</a></li>
+              <li class="has-submenu">
+                <a href="services#mepf-3d-model">MEPF 3D Model</a>
+                <button class="submenu-toggle" type="button" aria-label="Show MEPF 3D model services" aria-expanded="false"><i class="ri-arrow-right-s-line"></i></button>
+                <ul class="submenu">
+                  <li><a href="services#mechanical-3d-model">Mechanical 3D Model</a></li>
+                  <li><a href="services#electrical-3d-model">Electrical 3D Model</a></li>
+                  <li><a href="services#plumbing-3d-model">Plumbing 3D Model</a></li>
+                  <li><a href="services#fire-fighting-3d-model">Fire Fighting 3D Model</a></li>
+                </ul>
+              </li>
+              <li><a href="services#mepf-clash-coordination">MEPF Clash Coordination</a></li>
+              <li><a href="services#shop-drawing">Shop Drawing / Installation Drawing</a></li>
+              <li><a href="services#bim-documentation">BIM Documentation</a></li>
+              <li><a href="services#scan-to-bim">Scan to BIM</a></li>
+              <li><a href="services#bim-staffing">BIM Staffing</a></li>
+              <li class="has-submenu">
+                <a href="services#software">Software &amp; Platforms</a>
+                <button class="submenu-toggle" type="button" aria-label="Show software and platforms" aria-expanded="false"><i class="ri-arrow-right-s-line"></i></button>
+                <ul class="submenu">
+                  <li><a href="services#software">Software</a></li>
+                  <li><a href="services#platforms">Platforms</a></li>
+                </ul>
+              </li>
+            </ul>
           </li>
           <li><a href="./#projects">Projects</a></li>
           <li><a href="careers">Careers</a></li>
@@ -134,8 +135,12 @@
             <label for="pc-subject">Subject *</label>
             <select name="service" id="pc-subject" required>
               <option value="" selected disabled>Select a subject</option>
-              <option>Project Enquiry</option><option>Architectural BIM</option><option>Structural BIM</option>
-              <option>MEP Coordination</option><option>Collaboration / Partnership</option><option>Careers</option><option>General Enquiry</option>
+              <option>Project Enquiry</option>
+              <option>2D Drafting</option><option>Architectural 3D Model</option><option>Structural 3D Model</option>
+              <option>Mechanical 3D Model</option><option>Electrical 3D Model</option><option>Plumbing 3D Model</option>
+              <option>Fire Fighting 3D Model</option><option>MEPF Clash Coordination</option><option>Shop Drawing / Installation Drawing</option>
+              <option>BIM Documentation</option><option>Scan to BIM</option><option>BIM Staffing</option>
+              <option>Collaboration / Partnership</option><option>Careers</option><option>General Enquiry</option>
             </select>
           </div>
           <div class="field"><label for="pc-message">Message *</label><textarea name="message" id="pc-message" rows="4" placeholder="Write your message here..." required></textarea></div>
@@ -170,7 +175,7 @@
         <div class="faq-list">
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">What services do you offer?<i class="ri-add-line"></i></button>
-            <div class="faq-a"><p>We provide Architectural, Structural and MEP BIM modelling, clash detection and coordination, shop drawings, BIM documentation and 4D/5D BIM support.</p></div>
+            <div class="faq-a"><p>We provide 2D drafting, architectural, structural and MEPF 3D modelling, MEPF clash coordination, shop and installation drawings, BIM documentation, Scan to BIM and BIM staffing.</p></div>
           </div>
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">Do you work on international projects?<i class="ri-add-line"></i></button>
@@ -238,10 +243,12 @@
       <div>
         <h5>Our Services</h5>
         <ul class="footer-cols">
-          <li><a href="services#structural-bim">Structural BIM</a></li><li><a href="services#architectural-bim">Architectural BIM</a></li>
-          <li><a href="services#mepf-bim">MEPF BIM</a></li><li><a href="services#clash-coordination">Clash Co-ordination</a></li>
-          <li><a href="services#sheet-preparation">Sheet Preparation</a></li><li><a href="services#bim-documentation">BIM Documentation</a></li>
-          <li><a href="services#modelling-3d">3D Modelling</a></li><li><a href="services#drawings-2d">2D Drawings</a></li>
+          <li><a href="services#drafting-2d">2D Drafting</a></li><li><a href="services#architectural-3d-model">Architectural 3D Model</a></li>
+          <li><a href="services#structural-3d-model">Structural 3D Model</a></li><li><a href="services#mechanical-3d-model">Mechanical 3D Model</a></li>
+          <li><a href="services#electrical-3d-model">Electrical 3D Model</a></li><li><a href="services#plumbing-3d-model">Plumbing 3D Model</a></li>
+          <li><a href="services#fire-fighting-3d-model">Fire Fighting 3D Model</a></li><li><a href="services#mepf-clash-coordination">MEPF Clash Coordination</a></li>
+          <li><a href="services#shop-drawing">Shop Drawing / Installation Drawing</a></li><li><a href="services#bim-documentation">BIM Documentation</a></li>
+          <li><a href="services#scan-to-bim">Scan to BIM</a></li><li><a href="services#bim-staffing">BIM Staffing</a></li>
         </ul>
       </div>
       <div>
@@ -276,8 +283,10 @@
           <div class="field">
             <select name="service" id="cf-service" required>
               <option value="" selected disabled hidden></option>
-              <option>Architectural BIM</option><option>Structural BIM</option><option>MEP Coordination</option>
-              <option>BIM Documentation</option><option>3D Modeling</option><option>2D Drawings</option>
+              <option>2D Drafting</option><option>Architectural 3D Model</option><option>Structural 3D Model</option>
+              <option>Mechanical 3D Model</option><option>Electrical 3D Model</option><option>Plumbing 3D Model</option>
+              <option>Fire Fighting 3D Model</option><option>MEPF Clash Coordination</option><option>Shop Drawing / Installation Drawing</option>
+              <option>BIM Documentation</option><option>Scan to BIM</option><option>BIM Staffing</option>
             </select>
             <label for="cf-service">Service *</label>
           </div>
