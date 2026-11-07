@@ -71,10 +71,19 @@
           <li><a href="careers">Careers</a></li>
           <li><a href="contact" class="active">Contact</a></li>
         </ul>
-        <a href="mailto:query@vertivebim.com" class="btn btn-primary nav-cta-mobile">Reach Us <i class="ri-mail-line"></i></a>
+        <div class="nav-cta-mobile reach-mobile">
+          <a href="tel:+918967129615" class="btn btn-primary"><i class="ri-phone-line"></i> Call Us</a>
+          <a href="mailto:query@vertivebim.com" class="btn btn-outline"><i class="ri-mail-line"></i> Email Us</a>
+        </div>
       </nav>
 
-      <a href="mailto:query@vertivebim.com" class="btn btn-primary header-cta">Reach Us <i class="ri-mail-line"></i></a>
+      <div class="reach header-cta">
+        <button class="btn btn-primary reach-toggle" type="button" aria-expanded="false" aria-controls="reachMenu">Reach Us <i class="ri-arrow-down-s-line"></i></button>
+        <div class="reach-menu" id="reachMenu">
+          <a href="tel:+918967129615"><span class="reach-icon"><i class="ri-phone-line"></i></span><span><strong>Call Us</strong>+91 8967129615</span></a>
+          <a href="mailto:query@vertivebim.com"><span class="reach-icon"><i class="ri-mail-line"></i></span><span><strong>Email Us</strong>query@vertivebim.com</span></a>
+        </div>
+      </div>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </header>

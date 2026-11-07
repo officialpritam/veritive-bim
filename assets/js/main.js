@@ -95,6 +95,32 @@ document.addEventListener('DOMContentLoaded', () => {
     item.addEventListener('mouseleave', () => item.classList.remove('dismissed'));
   });
 
+  /* ---------- Reach Us menu (call / email) ---------- */
+  $$('.reach').forEach(reach => {
+    const btn = $('.reach-toggle', reach);
+    const setOpen = (open) => {
+      reach.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+    };
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      reach.classList.remove('dismissed');
+      setOpen(!reach.classList.contains('open'));
+    });
+    document.addEventListener('click', (e) => { if (!reach.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && reach.classList.contains('open')) { setOpen(false); btn.focus(); }
+    });
+    reach.addEventListener('focusout', (e) => {
+      if (e.relatedTarget && !reach.contains(e.relatedTarget)) setOpen(false);
+    });
+    $$('.reach-menu a', reach).forEach(a => a.addEventListener('click', () => {
+      setOpen(false);
+      reach.classList.add('dismissed');
+    }));
+    reach.addEventListener('mouseleave', () => reach.classList.remove('dismissed'));
+  });
+
   /* ---------- Typed.js (hero) ---------- */
   if ($('#typed')) new Typed('#typed', {
     strings: ['smarter, sustainable built environment.', 'clash-free coordination.', 'faster project delivery.'],
