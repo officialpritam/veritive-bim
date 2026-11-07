@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     openModal(btn.dataset.openModal);
   }));
-  // "Let's Talk" / "View Current Openings" style CTAs that point at #contact also open the form
+  // "View Current Openings" style CTAs that point at #contact also open the form
   $$('a.btn[href="#contact"]').forEach(a => a.addEventListener('click', (e) => {
     e.preventDefault();
     closeNav();
